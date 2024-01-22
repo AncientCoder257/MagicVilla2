@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla_VillaAPI.Controllers;
 
-[Route("[controller]")]
+[Route("v{version:apiVersion}/[controller]")]
 [ApiController]
+[ApiVersionNeutral]
 public class UsersController : ControllerBase
 {
     private readonly IUserRepository _userRepository;

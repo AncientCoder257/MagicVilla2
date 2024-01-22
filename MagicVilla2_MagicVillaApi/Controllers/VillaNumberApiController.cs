@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla_VillaAPI.Controllers;
 
-[Route("[controller]")]
+[Route("v{version:apiVersion}/[controller]")]
 [ApiController]
+[ApiVersion("1.0")]
 public class VillaNumberApiController : ControllerBase
 {
     private readonly ILogger<VillaAPIController> _logger;
@@ -31,6 +32,7 @@ public class VillaNumberApiController : ControllerBase
         this._response = new();
     }
 
+    [MapToApiVersion("1.0")]
     [HttpGet("GetVillaNumbers")]
     [ProducesResponseType(typeof(VillaDto), StatusCodes.Status200OK)]
     public async Task<ActionResult<ApiResponse>> GetVillaNumbers()

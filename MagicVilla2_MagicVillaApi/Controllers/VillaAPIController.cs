@@ -9,8 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla_VillaAPI.Controllers;
 
-[Route("[controller]")]
+[Route("v{version:apiVersion}/[controller]")]
 [ApiController]
+[ApiVersion("1.0")]
 public class VillaAPIController : ControllerBase
 {
     private readonly ILogger<VillaAPIController> _logger;
