@@ -124,7 +124,7 @@ public class VillaAPIController : ControllerBase
     }
 
     [HttpDelete("{id:int}", Name = "DeleteVilla")]
-    [Authorize(Roles = "custom")]
+    [Authorize(Roles = "admin")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

@@ -1,4 +1,5 @@
 using System.Net;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json.Serialization;
 using MagicVilla_Utility;
@@ -49,6 +50,11 @@ public class BaseService : IBaseService
             }
 
             HttpResponseMessage httpResponse = null;
+
+            if (!string.IsNullOrEmpty(apiRequest.Token))
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiRequest.Token);
+            }
             
             httpResponse = await client.SendAsync(message);
 
