@@ -24,7 +24,7 @@ public class VillaService : BaseService, IVillaService
         return SendAsync<T>(new ApiRequest()
         {
             ApiType = StaticDetails.ApiType.GET,
-            Url = villaUrl + "/VillaAPI/GetVillas",
+            Url = villaUrl + "/v1/VillaAPI/GetVillas",
             Token = token
         });
     }
@@ -34,7 +34,7 @@ public class VillaService : BaseService, IVillaService
         return SendAsync<T>(new ApiRequest()
         {
             ApiType = StaticDetails.ApiType.GET,
-            Url = villaUrl + "/VillaAPI/"+id,
+            Url = villaUrl + "/v1/VillaAPI/"+id,
             Token = token
         });
     }
@@ -45,7 +45,7 @@ public class VillaService : BaseService, IVillaService
         {
             ApiType = StaticDetails.ApiType.POST,
             Data = dto,
-            Url = villaUrl + "/VillaAPI/CreateVilla",
+            Url = villaUrl + "/v1/VillaAPI/CreateVilla",
             Token = token
         });
     }
@@ -56,7 +56,7 @@ public class VillaService : BaseService, IVillaService
         {
             ApiType = StaticDetails.ApiType.PUT,
             Data = dto,
-            Url = villaUrl + "/VillaAPI?id="+dto.Id,
+            Url = villaUrl + "/v1/VillaAPI?id="+dto.Id,
             Token = token
         });
     }
@@ -66,7 +66,7 @@ public class VillaService : BaseService, IVillaService
         return SendAsync<T>(new ApiRequest()
         {
             ApiType = StaticDetails.ApiType.DELETE,
-            Url = villaUrl + "/VillaAPI/"+id,
+            Url = villaUrl + "/v1/VillaAPI/"+id,
             Token = token
         });
     }

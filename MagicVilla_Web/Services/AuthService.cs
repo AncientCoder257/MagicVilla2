@@ -25,7 +25,7 @@ public class AuthService : BaseService, IAuthService
         {
             ApiType = StaticDetails.ApiType.POST,
             Data = objToCreate,
-            Url = villaUrl + "/Users/login"
+            Url = villaUrl + "/v1/Users/login"
         });
     }
 
@@ -35,7 +35,7 @@ public class AuthService : BaseService, IAuthService
         {
             ApiType = StaticDetails.ApiType.POST,
             Data = objToCreate,
-            Url = villaUrl + "/Users/Register"
+            Url = villaUrl + "/v1/Users/Register"
         });
     }
 }
